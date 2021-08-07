@@ -33,7 +33,7 @@ const Home = (): JSX.Element => {
       ...accumulator,
       [product.id]: product.amount
     }
-  }, { ACCUMULATOR_INITIAL_VALUE: 'BLABALBALBALBA'} as CartItemsAmount)
+  }, {} as CartItemsAmount)
 
   useEffect(() => {
     async function loadProducts() {
