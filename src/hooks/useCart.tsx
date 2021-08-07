@@ -63,13 +63,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       if (!cartProduct?.id) {
         throw new Error('Erro na remoção do produto')
       }
-
-      const mapCart = cart.map( (item) => (
-        item.id === productId 
-        ? null
-        : item
-        )) as Product[]
-        _onUpdateCart(mapCart)
+      
+      const mapCart = cart.filter((item) => item.id !== productId)  
+      _onUpdateCart(mapCart)
       } catch(error) {
         toast.error(error.message)
      }
